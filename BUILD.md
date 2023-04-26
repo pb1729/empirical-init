@@ -27,16 +27,16 @@ python tests/test_ei.py
 
 ## Uploading the package
 
-Test upload (note the we use wildcard so that we can just paste without knowing the versioon number):
+Test upload (replace X.X.X with the current version number):
 
 ```
-python -m twine upload -r testpypi dist/empirical_init-*.tar.gz
+python -m twine upload -r testpypi dist/empirical_init-X.X.X.tar.gz
 ```
 
 Full PyPI upload:
 
 ```
-python -m twine upload dist/empirical_init-*.tar.gz
+python -m twine upload dist/empirical_init-X.X.X.tar.gz
 ```
 
 

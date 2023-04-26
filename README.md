@@ -43,3 +43,9 @@ empirical_init(
   get_wrapped_submodules(my_module), my_module,
   dummy_input, dummy_loss)
 ```
+
+This will print out a bunch of helpful debug information about the tuning process. In particular, the magnitudes of activations and gradients going in and out of each wrapped submodule will be printed. After the call completes, all the scaling factors should be properly tuned.
+
+Note that the number of calls made by empirical_init to your network scales with the number of layers in your network. So if your network takes a while to run or it has a lot of layers, empirical_init could take a while to terminate. Try it on a small fast network first if it's your first time using this package.
+
+The dummy functions are there to provide realistic-looking data and gradients for your network to consume. The dummy input function should generate random input data of the provided batch size. The dummy loss function should produce a loss when passed the output of the network. A good rule of thumb is to have the dummy input function call `torch.randn()` to produce input of the right shape, and the dummy loss function should be the same as your actual loss function, but with randomized labels.
