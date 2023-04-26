@@ -4,10 +4,15 @@ required_packages = [
   "torch",
 ]
 
+with open("README.md", "r") as f:
+  long_description = f.read()
+
 setup(
   name="empirical_init",
-  version="0.0.0",
+  version="0.0.1",
   description="Automatically initialize weights in pytorch modules using a hacky empirical method.",
+  long_description=long_description,
+  long_description_content_type="text/markdown",
   url="https://github.com/pb1729/factor-loss/empirical-init",
   author="Phillip Bement",
   author_email="{author_first_name}{author_last_initial}@fastmail.com",

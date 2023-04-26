@@ -9,7 +9,7 @@ From the repo root directory, run:
 ```
 python -m build
 ```
-d 
+
 ## Testing the package
 
 First we make sure that the version of empirical init we want to test is installed. To do this, we run the following from the repo root directory:
